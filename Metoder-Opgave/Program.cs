@@ -17,6 +17,7 @@ namespace Metoder_Opgave
             Opgave6();
             Opgave7();
             Opgave8();
+            Opgave9();
         }
 
         static void Continue()
@@ -108,7 +109,7 @@ namespace Metoder_Opgave
 
             int number = ConsoleEx.GetInput<int>("Indtast et tal: ").AndClear();
 
-            for (int i = 0; i < 33; i++)
+            for (int i = 0; i < 32; i++)
                 Console.WriteLine(number++);
             for (int i = 0; i < 16; i++)
                 Console.WriteLine(number--);
@@ -165,7 +166,26 @@ namespace Metoder_Opgave
 
         static void Opgave9()
         {
+            Random random = new Random();
 
+            int[] lottoNumbers = new int[7];
+            for (int i = 0; i < lottoNumbers.Length; i++)
+                lottoNumbers[i] = random.Next(1, 20);
+
+            int[] userNumbers = ConsoleEx.GetInput<int[]>("Lotto numbers has been generated, make your guess as to what it is!", 7);
+
+            int correct = 0;
+
+            for (int i = 0; i < 7; i++)
+                if (userNumbers[i] == lottoNumbers[i])
+                    correct++;
+
+            if (correct > 2)
+                Console.WriteLine($"You had {correct} correct guesses and have gained {(correct * (correct * 20))} points!");
+            else
+                Console.WriteLine("You did not guess enough lotto numbers correctly, therefore you get nothing.");
+
+            Continue();
         }
 
 
