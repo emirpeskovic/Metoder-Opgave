@@ -1,5 +1,7 @@
 ﻿using EmirsLibrary.Extensions;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Metoder_Opgave
 {
@@ -14,6 +16,7 @@ namespace Metoder_Opgave
             Opgave5();
             Opgave6(ConsoleEx.GetInput<int>("Indtast et tal: ").AndClear());
             Opgave7();
+            Opgave8();
         }
 
         static void Continue()
@@ -108,6 +111,21 @@ namespace Metoder_Opgave
                     arr[i] = arr[i - 1] * 2;
 
             Continue();
+        }
+
+        static void Opgave8()
+        {
+            List<int> listeB = new List<int>();
+
+            for (int i = 0; i < 20; i++)
+                listeB.Add(i + 1);
+
+            listeB.Where(n => n % 3 == 0).ToList().ForEach(a => listeB.Remove(a)); // ToList to make a copy, can't iterate through list and remove at the same time
+
+            listeB[2] = 17;
+
+            var listeA = listeB.ToList();
+            listeA.Reverse();
         }
     }
 }
