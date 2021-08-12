@@ -13,6 +13,7 @@ namespace Metoder_Opgave
             Opgave4();
             Opgave5();
             Opgave6(ConsoleEx.GetInput<int>("Indtast et tal: ").AndClear());
+            Opgave7();
         }
 
         static void Continue()
@@ -89,6 +90,24 @@ namespace Metoder_Opgave
                 Console.WriteLine(number++);
             for (int i = 0; i < 16; i++)
                 Console.WriteLine(number--);
+
+            Continue();
+        }
+
+        static void Opgave7()
+        {
+            int[] arr = new int[9];
+
+            for (int i = 0; i < arr.Length; i++)
+                arr[i] = i + 1;
+
+            for (int i = 0; i < 5; i++) // why loop?
+                if (i != 4)
+                    continue;
+                else
+                    arr[i] = arr[i - 1] * 2;
+
+            Continue();
         }
     }
 }
