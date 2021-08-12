@@ -18,6 +18,7 @@ namespace Metoder_Opgave
             Opgave7();
             Opgave8();
             Opgave9();
+            Opgave10();
         }
 
         static void Continue()
@@ -166,6 +167,8 @@ namespace Metoder_Opgave
 
         static void Opgave9()
         {
+            "Opgave 9: ".WriteLine();
+
             Random random = new Random();
 
             int[] lottoNumbers = new int[7];
@@ -188,6 +191,40 @@ namespace Metoder_Opgave
             Continue();
         }
 
+        static void Opgave10()
+        {
+            "Opgave 10: ".WriteLine();
+
+            int secretNumber = new Random().Next(20);
+
+            int guess = -1;
+            int amountOfGuesses = 0;
+
+            Console.WriteLine("A random number between 1 and 20 has been generated. Try guessing it!");
+            while ((guess = ConsoleEx.GetInput<int>("Your guess: ")) != secretNumber)
+            {
+                if (secretNumber < guess)
+                    Console.WriteLine("Wrong, try guessing lower.");
+                else
+                    Console.WriteLine("Wrong, try guessing higher.");
+
+                amountOfGuesses++;
+            }
+
+            Console.WriteLine($"Congratulations, you guessed correctly! The number was {secretNumber}!");
+            if (amountOfGuesses > 7)
+                Console.WriteLine("Sadly it took you too many guesses for you to win a prize.");
+            else
+            {
+                Console.WriteLine("You won a car!");
+                Console.WriteLine(@" /|_||_\`.__");
+                Console.WriteLine(@"(   _    _ _\");
+                Console.WriteLine(@"=`-(_)--(_)-'  hjw");
+                Console.WriteLine("Credits to Hayley Jane Wakenshaw for the art.");
+            }
+
+            Continue();
+        }
 
     }
 }
