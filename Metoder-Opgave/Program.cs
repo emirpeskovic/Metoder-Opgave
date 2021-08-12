@@ -12,6 +12,7 @@ namespace Metoder_Opgave
             Opgave3(ConsoleEx.GetInput<string>("Indtast dit navn: ").AndClear(), ConsoleEx.GetInput<int>("Indtast din alder: ").AndClear());
             Opgave4();
             Opgave5();
+            Opgave6(ConsoleEx.GetInput<int>("Indtast et tal: ").AndClear());
         }
 
         static void Continue()
@@ -80,6 +81,14 @@ namespace Metoder_Opgave
                 Console.Write(i + " ");
 
             Continue();
+        }
+
+        static void Opgave6(int number)
+        {
+            for (int i = 0; i < 33; i++)
+                Console.WriteLine(number++);
+            for (int i = 0; i < 16; i++)
+                Console.WriteLine(number--);
         }
     }
 }
