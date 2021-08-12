@@ -59,6 +59,8 @@ namespace Metoder_Opgave
 
         static void Opgave3(string name, int age)
         {
+            "Opgave 3: ".WriteLine();
+
             if (age < 3)
                 Console.WriteLine($"{name}, du må gå med ble"); // 3.1
             else if (age >= 3 && age <= 15)
@@ -73,6 +75,8 @@ namespace Metoder_Opgave
 
         static void Opgave4()
         {
+            "Opgave 4: ".WriteLine();
+
             for (int i = 0; i < 10; i++)
                 Console.Write(i + 1 + " ");
 
@@ -81,6 +85,8 @@ namespace Metoder_Opgave
 
         static void Opgave5()
         {
+            "Opgave 5: ".WriteLine();
+
             for (int i = 10; i > 0; i--)
                 Console.Write(i + " ");
 
@@ -89,6 +95,8 @@ namespace Metoder_Opgave
 
         static void Opgave6(int number)
         {
+            "Opgave 6".WriteLine();
+
             for (int i = 0; i < 33; i++)
                 Console.WriteLine(number++);
             for (int i = 0; i < 16; i++)
@@ -99,6 +107,8 @@ namespace Metoder_Opgave
 
         static void Opgave7()
         {
+            "Opgave 7: ".WriteLine();
+
             int[] arr = new int[9];
 
             for (int i = 0; i < arr.Length; i++)
@@ -110,15 +120,21 @@ namespace Metoder_Opgave
                 else
                     arr[i] = arr[i - 1] * 2;
 
+            foreach (var item in arr)
+                Console.WriteLine(item);
+
             Continue();
         }
 
         static void Opgave8()
         {
+            "Opgave 8: ".WriteLine();
+
             List<int> listeB = new List<int>();
 
             for (int i = 0; i < 20; i++)
-                listeB.Add(i + 1);
+                if ((i + 1) % 2 == 0)
+                    listeB.Add(i + 1);
 
             listeB.Where(n => n % 3 == 0).ToList().ForEach(a => listeB.Remove(a)); // ToList to make a copy, can't iterate through list and remove at the same time
 
@@ -126,6 +142,14 @@ namespace Metoder_Opgave
 
             var listeA = listeB.ToList();
             listeA.Reverse();
+
+            foreach (var item in listeB)
+                item.WriteLine();
+
+            foreach (var item in listeA)
+                item.WriteLine();
+
+            Continue();
         }
     }
 }
