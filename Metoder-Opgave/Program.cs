@@ -9,12 +9,12 @@ namespace Metoder_Opgave
     {
         static void Main(string[] args)
         {
-            Opgave1(ConsoleEx.GetInput<int>("Indtast tal 1: ").AndClear(), ConsoleEx.GetInput<int>("Indtast tal 2: ").AndClear());
-            Opgave2(ConsoleEx.GetInput<int>("Indtast tal 1: ").AndClear(), ConsoleEx.GetInput<int>("Indtast tal 2: ").AndClear());
-            Opgave3(ConsoleEx.GetInput<string>("Indtast dit navn: ").AndClear(), ConsoleEx.GetInput<int>("Indtast din alder: ").AndClear());
+            Opgave1();
+            Opgave2();
+            Opgave3();
             Opgave4();
             Opgave5();
-            Opgave6(ConsoleEx.GetInput<int>("Indtast et tal: ").AndClear());
+            Opgave6();
             Opgave7();
             Opgave8();
         }
@@ -26,9 +26,12 @@ namespace Metoder_Opgave
             Console.Clear();
         }
 
-        static void Opgave1(int tal1, int tal2)
+        static void Opgave1()
         {
             "Opgave 1: ".WriteLine();
+
+            int tal1 = ConsoleEx.GetInput<int>("Indtast tal 1: ").AndClear();
+            int tal2 = ConsoleEx.GetInput<int>("Indtast tal 2: ").AndClear();
 
             int add = tal1 + tal2;
             int div1 = tal1 / tal2;
@@ -45,9 +48,12 @@ namespace Metoder_Opgave
             Continue();
         }
 
-        static void Opgave2(int tal1, int tal2)
+        static void Opgave2()
         {
             "Opgave 2: ".WriteLine();
+
+            int tal1 = ConsoleEx.GetInput<int>("Indtast tal 1: ").AndClear();
+            int tal2 = ConsoleEx.GetInput<int>("Indtast tal 2: ").AndClear();
 
             double tal3 = Math.Sqrt(Math.Pow(tal1, 2) + Math.Pow(tal2, 2));
 
@@ -57,9 +63,12 @@ namespace Metoder_Opgave
             Continue();
         }
 
-        static void Opgave3(string name, int age)
+        static void Opgave3()
         {
             "Opgave 3: ".WriteLine();
+
+            string name = ConsoleEx.GetInput<string>("Indtast dit navn: ").AndClear();
+            int age = ConsoleEx.GetInput<int>("Indtast din alder: ").AndClear();
 
             if (age < 3)
                 Console.WriteLine($"{name}, du må gå med ble"); // 3.1
@@ -93,9 +102,11 @@ namespace Metoder_Opgave
             Continue();
         }
 
-        static void Opgave6(int number)
+        static void Opgave6()
         {
             "Opgave 6".WriteLine();
+
+            int number = ConsoleEx.GetInput<int>("Indtast et tal: ").AndClear();
 
             for (int i = 0; i < 33; i++)
                 Console.WriteLine(number++);
@@ -151,5 +162,12 @@ namespace Metoder_Opgave
 
             Continue();
         }
+
+        static void Opgave9()
+        {
+
+        }
+
+
     }
 }
