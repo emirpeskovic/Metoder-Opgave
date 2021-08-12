@@ -19,6 +19,7 @@ namespace Metoder_Opgave
             Opgave8();
             Opgave9();
             Opgave10();
+            Opgave11();
         }
 
         static void Continue()
@@ -226,5 +227,49 @@ namespace Metoder_Opgave
             Continue();
         }
 
+        static void Opgave11()
+        {
+            "Opgave 11: ".WriteLine();
+
+            Sum(1, 11).WriteLine();
+            Div(7, 2).WriteLine();
+            Rem(19, 200).WriteLine();
+            List<int> list = new List<int>();
+            Random random = new Random();
+            for (int i = 0; i < random.Next(10); i++)
+                list.Add(random.Next(42));
+            GetHighestElement(list).WriteLine();
+            Indeholder(list, 42).WriteLine();
+            GetAverage(list).WriteLine();
+            IsSorted(list).WriteLine();
+            list.Sort();
+            IsSorted(list).WriteLine();
+
+        }
+
+        static int Sum(int a, int b) => a + b;
+        static double Div(int a, int b) => a / b;
+        static double Rem(int a, int b) => b / a;
+        static T GetHighestElement<T>(List<T> list) => list.Max();
+        static bool Indeholder<T>(List<T> list, T item) => list.Contains(item);
+
+        static int GetAverage(List<int> list)
+        {
+            int average = 0;
+            foreach (int value in list)
+                average += value;
+            average /= list.Count;
+            return average;
+        }
+
+        static bool IsSorted(List<int> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+                if (i != 0)
+                    if (list[i - 1] > list[i])
+                        return false;
+
+            return true;
+        }
     }
 }
