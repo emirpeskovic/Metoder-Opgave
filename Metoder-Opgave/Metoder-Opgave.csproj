@@ -6,4 +6,10 @@
     <RootNamespace>Metoder_Opgave</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="EmirsLibrary">
+      <HintPath>..\..\EmirsExtensions\EmirsLibrary\bin\Release\netcoreapp3.1\EmirsLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
